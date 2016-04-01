@@ -1,8 +1,22 @@
+/**
+ * Objects module - defines game objects which are the building blocks of the game
+ *
+ * @module objects
+ */
 var objects;
 (function (objects) {
-    // ASSET CLASS ++++++++++++++++++++++++++
+    /**
+     * Simple utility class that defines an Asset object
+     *
+     * @class Asset
+     */
     var Asset = (function () {
-        // CONSTRUCTOR +++++++++++++++++++++
+        /**
+         * @param  {string} public id
+         * @param  {string} public src
+         *
+         * @Constructor
+         */
         function Asset(id, src) {
             this.id = id;
             this.src = src;
@@ -11,4 +25,5 @@ var objects;
     }());
     objects.Asset = Asset;
 })(objects || (objects = {}));
+
 //# sourceMappingURL=asset.js.map

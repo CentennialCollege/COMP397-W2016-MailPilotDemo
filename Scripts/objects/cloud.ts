@@ -9,6 +9,7 @@ module objects {
             
            this._reset(this._topBounds);
            this.name = "cloud";
+           this.soundString = "thunder";
         }
         
         // PRIVATE METHODS ++++++++++++++++++++++++++++

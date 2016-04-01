@@ -15,6 +15,7 @@ var objects;
             this._speed.y = 5; //island speed
             this._reset(this._topBounds);
             this.name = "island";
+            this.soundString = "yay";
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
         Island.prototype._checkBounds = function (value) {
@@ -39,4 +40,5 @@ var objects;
     }(objects.GameObject));
     objects.Island = Island;
 })(objects || (objects = {}));
+
 //# sourceMappingURL=island.js.map

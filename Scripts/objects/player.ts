@@ -8,6 +8,7 @@ module objects {
         // PUBLIC INSTANCE VARIABLES
         public width: number;
         public height: number;
+        public engineSound: createjs.AbstractSoundInstance;
         constructor() {
             super(assets.getResult("plane"));
 
@@ -21,6 +22,11 @@ module objects {
             this._rightBounds = config.Screen.WIDTH - (this.width * 0.5);
 
             this.y = 430;
+            
+            // assign and play the engine sound
+            this.engineSound = createjs.Sound.play("engine");
+            // Loop engine sound forever
+            this.engineSound.loop = -1;
         }
 
         // PRIVATE METHODS

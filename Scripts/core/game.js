@@ -6,6 +6,9 @@ var stage;
 var stats;
 var currentScene;
 var scene;
+var livesValue;
+var scoreValue;
+var highScoreValue = 0;
 // Game Scenes
 var menu;
 var play;
@@ -19,6 +22,9 @@ var assetData = [
     { id: "plane", src: "../../Assets/images/plane.png" },
     { id: "island", src: "../../Assets/images/island.png" },
     { id: "cloud", src: "../../Assets/images/cloud.png" },
+    { id: "engine", src: "../../Assets/audio/engine.ogg" },
+    { id: "yay", src: "../../Assets/audio/yay.ogg" },
+    { id: "thunder", src: "../../Assets/audio/thunder.ogg" }
 ];
 function preload() {
     assets = new createjs.LoadQueue();
@@ -92,4 +98,5 @@ function changeScene() {
     console.log(currentScene.numChildren);
 }
 window.onload = preload;
+
 //# sourceMappingURL=game.js.map

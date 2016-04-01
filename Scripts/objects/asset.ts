@@ -1,13 +1,23 @@
+/**
+ * Objects module - defines game objects which are the building blocks of the game
+ * 
+ * @module objects
+ */
 module objects {
-    // ASSET CLASS ++++++++++++++++++++++++++
+    /**
+     * Simple utility class that defines an Asset object
+     * 
+     * @class Asset
+     */
     export class Asset {
-        //PUBLIC INSTANCE VARIABLES
-        public id:string;
-        public src: string;
-        // CONSTRUCTOR +++++++++++++++++++++
-        constructor(id:string, src:string) {
-            this.id = id;
-            this.src = src;
+        /**
+         * @param  {string} public id
+         * @param  {string} public src
+         * 
+         * @Constructor
+         */
+        constructor(public id:string, public src:string) {
+
         }
     }
 }

@@ -14,6 +14,7 @@ var objects;
             _super.call(this, "cloud");
             this._reset(this._topBounds);
             this.name = "cloud";
+            this.soundString = "thunder";
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
         Cloud.prototype._checkBounds = function (value) {
@@ -41,4 +42,5 @@ var objects;
     }(objects.GameObject));
     objects.Cloud = Cloud;
 })(objects || (objects = {}));
+
 //# sourceMappingURL=cloud.js.map

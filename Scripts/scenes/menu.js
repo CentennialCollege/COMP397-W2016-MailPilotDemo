@@ -15,8 +15,11 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Menu.prototype.start = function () {
+            // added ocean to the scene
+            this._ocean = new objects.Ocean();
+            this.addChild(this._ocean);
             //Add Menu Label
-            this._menuLabel = new objects.Label("MENU SCENE", "60px Consolas", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
+            this._menuLabel = new objects.Label("MAIL PILOT", "60px Consolas", "#ffff00", config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
             this.addChild(this._menuLabel);
             // add the Start button to the MENU scene
             this._startButton = new objects.Button("StartButton", config.Screen.CENTER_X, config.Screen.CENTER_Y + 180, true);
@@ -28,6 +31,7 @@ var scenes;
         };
         // INTRO Scene updates here
         Menu.prototype.update = function () {
+            this._ocean.update();
         };
         //EVENT HANDLERS ++++++++++++++++++++
         // LEFT_CAVE Button click event handler
@@ -40,4 +44,5 @@ var scenes;
     }(objects.Scene));
     scenes.Menu = Menu;
 })(scenes || (scenes = {}));
+
 //# sourceMappingURL=menu.js.map

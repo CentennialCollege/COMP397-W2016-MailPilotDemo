@@ -14,6 +14,8 @@ module objects {
         public height:number;     
         public centerX:number;
         public centerY:number;
+        public isColliding:boolean;
+        public soundString:string;
         
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
         constructor(bitmapString:string) {
@@ -24,6 +26,7 @@ module objects {
            this.height = this.getBounds().height;
            this.centerX = this.width * 0.5;
            this.centerY = this.height * 0.5;
+           this.isColliding = false;
            this._topBounds = -this.height;
            this._bottomBounds = config.Screen.HEIGHT + this.height;
            this._leftBounds = 0;

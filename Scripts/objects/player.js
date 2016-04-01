@@ -17,6 +17,10 @@ var objects;
             this._leftBounds = this.width * 0.5;
             this._rightBounds = config.Screen.WIDTH - (this.width * 0.5);
             this.y = 430;
+            // assign and play the engine sound
+            this.engineSound = createjs.Sound.play("engine");
+            // Loop engine sound forever
+            this.engineSound.loop = -1;
         }
         // PRIVATE METHODS
         Player.prototype._checkBounds = function () {
@@ -36,4 +40,5 @@ var objects;
     }(createjs.Bitmap));
     objects.Player = Player;
 })(objects || (objects = {}));
+
 //# sourceMappingURL=player.js.map

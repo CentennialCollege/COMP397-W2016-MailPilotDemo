@@ -8,6 +8,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var tscProject = tsc.createProject('tsconfig.json');
 var connect = require('gulp-connect');
 var open = require('gulp-open');
+var typedoc = require('gulp-typedoc');
 
 // Declare file sources
 var TypeScriptSources = [
@@ -19,7 +20,7 @@ var HTMLSources = ['./**/*.html'];
 var CSSSources = ['./Content/**/*.css'];
 
 // This task Transpiles TypeScript to JavaScript
-gulp.task('transpile', function () {
+gulp.task('transpile', function() {
     gutil.log("transpiling...");
 
     var tsResult = gulp.src(TypeScriptSources)
@@ -32,32 +33,32 @@ gulp.task('transpile', function () {
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./Scripts/'))
         .on('error', gutil.log)
-        .pipe(connect.reload()); 
+        .pipe(connect.reload());
 });
 
 // This task reloads the browser when any changes occur to html pages
-gulp.task("html", function () {
+gulp.task("html", function() {
     gutil.log("html changed...");
     gulp.src(HTMLSources)
-    .pipe(connect.reload()); 
+        .pipe(connect.reload());
 });
 
 // This task reloads the browser when any changes occur to css files
-gulp.task('css', function(){
-   gutil.log("css files changed...");
-   gulp.src(CSSSources)
-   .pipe(connect.reload()); 
+gulp.task('css', function() {
+    gutil.log("css files changed...");
+    gulp.src(CSSSources)
+        .pipe(connect.reload());
 });
 
 // This task watches .ts .js and .html files for any changes
-gulp.task("watch", function () {
+gulp.task("watch", function() {
     gulp.watch(TypeScriptSources, ['transpile']);
     gulp.watch(HTMLSources, ['html']);
     gulp.watch(CSSSources, ['css']);
 });
 
 // This task creates a local server and turns on livereload functionality
-gulp.task("connect", function () {
+gulp.task("connect", function() {
     connect.server({
         root: './',
         livereload: true
@@ -65,9 +66,29 @@ gulp.task("connect", function () {
 });
 
 // This task opens Chrome within the local connect server
-gulp.task('open', function () {
+gulp.task('open', function() {
     gulp.src('./index.html')
-        .pipe(open({uri: 'http://localhost:8080', app: 'Google Chrome'}));
+        .pipe(open({ uri: 'http://localhost:8080', app: 'Google Chrome' }));
+});
+
+gulp.task("typedoc", function() {
+    return gulp
+    .src(TypeScriptSources)
+        .pipe(typedoc({
+            // TypeScript options (see typescript docs) 
+            module: "commonjs",
+            target: "es5",
+            includeDeclarations: true,
+
+            // Output options (see typedoc docs) 
+            out: "./out",
+            json: "./mailpilot.json",
+
+            // TypeDoc options (see typedoc docs) 
+            name: "my-project",
+            ignoreCompilerErrors: false,
+            version: true,
+        }));
 });
 
 // This is the default task that runs everything

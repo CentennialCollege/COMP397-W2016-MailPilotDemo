@@ -30,4 +30,5 @@ var config;
     }());
     config.Game = Game;
 })(config || (config = {}));
+
 //# sourceMappingURL=config.js.map
