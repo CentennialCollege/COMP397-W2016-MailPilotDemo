@@ -37,7 +37,7 @@ var objects;
             this._checkBounds(this._bottomBounds);
         };
         return Island;
-    }(objects.GameObject));
+    }(objects.SpriteGameObject));
     objects.Island = Island;
 })(objects || (objects = {}));
 

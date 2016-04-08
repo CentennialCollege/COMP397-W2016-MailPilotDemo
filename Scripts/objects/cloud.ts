@@ -1,6 +1,6 @@
 module objects {
     // CLOUD CLASS ++++++++++++++++++++++++++++++++++++
-    export class Cloud extends objects.GameObject {
+    export class Cloud extends objects.SpriteGameObject {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++

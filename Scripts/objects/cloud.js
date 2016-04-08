@@ -39,7 +39,7 @@ var objects;
             this._checkBounds(this._bottomBounds);
         };
         return Cloud;
-    }(objects.GameObject));
+    }(objects.SpriteGameObject));
     objects.Cloud = Cloud;
 })(objects || (objects = {}));
 

@@ -5,6 +5,7 @@ var assets: createjs.LoadQueue;
 var canvas: HTMLElement;
 var stage: createjs.Stage;
 var stats: Stats;
+var textureAtlas: createjs.SpriteSheet;
 
 var currentScene: objects.Scene;
 var scene: number;
@@ -18,15 +19,37 @@ var menu: scenes.Menu;
 var play: scenes.Play;
 var end: scenes.End;
 
+var atlas = {
+    "images": [
+        "../../Assets/images/atlas.png"
+    ],
+    "frames": [
+        [1, 1, 226, 178, 0, 0, 0],
+        [229, 1, 150, 50, 0, 0, 0],
+        [381, 1, 62, 62, 0, 0, 0],
+        [229, 53, 150, 50, 0, 0, 0],
+        [381, 65, 62, 51, 0, -3, -9],
+        [229, 118, 62, 51, 0, -3, -9],
+        [293, 118, 62, 51, 0, -3, -9]
+    ],
+    "animations": {
+        "cloud": [0],
+        "RestartButton": [1],
+        "island": [2],
+        "StartButton": [3],
+        "plane": {
+            "frames": [4, 5, 6],
+            "speed": 0.5
+        }
+    }
+}
+
 var assetData:objects.Asset[] = [
     // Add your Assets here
     {id: "StartButton", src:"../../Assets/images/StartButton.png"},
     {id: "RestartButton", src:"../../Assets/images/RestartButton.png"},
     {id: "BackButton", src:"../../Assets/images/BackButton.png"},
     {id: "ocean", src:"../../Assets/images/ocean.gif"},
-    {id: "plane", src:"../../Assets/images/plane.png"},
-    {id: "island", src:"../../Assets/images/island.png"},
-    {id: "cloud", src:"../../Assets/images/cloud.png"},
     {id: "engine", src:"../../Assets/audio/engine.ogg"},
     {id: "yay", src:"../../Assets/audio/yay.ogg"},
     {id: "thunder", src:"../../Assets/audio/thunder.ogg"}
@@ -40,6 +63,10 @@ function preload() {
 }
 
 function init(): void {
+    // instantiate textureAtlas
+    textureAtlas = new createjs.SpriteSheet(atlas);
+    
+    
     // create a reference the HTML canvas Element
     canvas = document.getElementById("canvas");
     

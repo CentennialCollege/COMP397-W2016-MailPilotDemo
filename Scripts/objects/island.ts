@@ -1,6 +1,6 @@
 module objects {
     // ISLAND CLASS ++++++++++++++++++++++++++++++++++++
-    export class Island extends objects.GameObject {
+    export class Island extends objects.SpriteGameObject {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
