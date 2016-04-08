@@ -4,9 +4,9 @@
         <key>fileFormatVersion</key>
         <int>3</int>
         <key>texturePackerVersion</key>
-        <string>3.9.4</string>
+        <string>4.0.1</string>
         <key>fileName</key>
-        <string>/Users/thomas/Desktop/COMP397-MailPilotDemo-F2015/Assets/images/mailpilot.tps</string>
+        <string>/Users/thomas/Courses/COMP397 - Web Game Programming/Lesson 09 - Mail Pilot Build/COMP397-W2016-MailPilotDemo/Assets/images/mailpilot.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -38,7 +38,7 @@
         <key>dataFormat</key>
         <string>easeljs</string>
         <key>textureFileName</key>
-        <filename></filename>
+        <filename>atlas.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>pvrCompressionQuality</key>
@@ -72,7 +72,7 @@
             </struct>
         </struct>
         <key>shapePadding</key>
-        <uint>2</uint>
+        <uint>0</uint>
         <key>jpgQuality</key>
         <uint>80</uint>
         <key>pngOptimizationLevel</key>
@@ -84,7 +84,7 @@
         <key>textureFormat</key>
         <enum type="SettingsBase::TextureFormat">png</enum>
         <key>borderPadding</key>
-        <uint>2</uint>
+        <uint>0</uint>
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
@@ -144,6 +144,11 @@
         </struct>
         <key>dataFileNames</key>
         <map type="GFileNameMap">
+            <key>data</key>
+            <struct type="DataFile">
+                <key>name</key>
+                <filename></filename>
+            </struct>
             <key>json</key>
             <struct type="DataFile">
                 <key>name</key>
@@ -175,14 +180,16 @@
             <double>1</double>
             <key>scaleMode</key>
             <enum type="ScaleMode">Smooth</enum>
-            <key>innerPadding</key>
-            <uint>0</uint>
             <key>extrude</key>
-            <uint>0</uint>
+            <uint>1</uint>
             <key>trimThreshold</key>
+            <uint>1</uint>
+            <key>trimMargin</key>
             <uint>1</uint>
             <key>trimMode</key>
             <enum type="SpriteSettings::TrimMode">Trim</enum>
+            <key>tracerTolerance</key>
+            <int>200</int>
             <key>heuristicMask</key>
             <false/>
             <key>pivotPoint</key>
@@ -190,11 +197,13 @@
         </struct>
         <key>fileList</key>
         <array>
+            <filename>RestartButton.png</filename>
+            <filename>StartButton.png</filename>
             <filename>cloud.png</filename>
             <filename>island.png</filename>
-            <filename>plane.png</filename>
-            <filename>StartButton.png</filename>
-            <filename>RestartButton.png</filename>
+            <filename>plane1.png</filename>
+            <filename>plane2.png</filename>
+            <filename>plane3.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
